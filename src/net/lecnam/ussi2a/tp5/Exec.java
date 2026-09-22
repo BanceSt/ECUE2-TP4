@@ -20,8 +20,8 @@ public class Exec {
        Triangle trig2 = new Triangle(0, 35, 89, 78, 15, 51);
        Triangle trig3 = new Triangle(29, 3, 6, 5, 45, 55);
 
-       RectangleIncline rectI1 = new RectangleIncline(500, 20, 52, 69, 30);
-       RectangleIncline rectI2 = new RectangleIncline(50, 29, 32, 6958, 32);
+       Rectangle rectI1 = new Rectangle(500, 20, 52, 69, 30);
+       Rectangle rectI2 = new Rectangle(50, 29, 32, 6958, 32);
 
 
 
