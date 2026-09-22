@@ -20,6 +20,10 @@ public class Exec {
        Triangle trig2 = new Triangle(0, 35, 89, 78, 15, 51);
        Triangle trig3 = new Triangle(29, 3, 6, 5, 45, 55);
 
+       RectangleIncline rectI1 = new RectangleIncline(500, 20, 52, 69, 30);
+       RectangleIncline rectI2 = new RectangleIncline(50, 29, 32, 6958, 32);
+
+
 
 
        dessin.ajout(rect1);
@@ -29,6 +33,8 @@ public class Exec {
        dessin.ajout(trig1);
        dessin.ajout(trig2);
        dessin.ajout(trig3);
+       dessin.ajout(rectI1);
+       dessin.ajout(rectI2);
 
        System.out.println("Toutes les surfaces : " + dessin.retourneSurfaceTotale());
 
