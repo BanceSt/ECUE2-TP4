@@ -18,19 +18,19 @@ public class Rectangle extends Figure {
         this(longueur, largeur, new Point(x, y));
     }
 
-    double retourneSurface(){
+    public double retourneSurface(){
         return this.longueur *this.largeur;
     }
 
-    double retournePerimetre(){
+    public double retournePerimetre(){
         return 2 * (this.longueur + this.largeur);
     }
 
-    void translate(double x, double y){
+    public void translate(double x, double y){
         this.point.translate(x,y);
     }
 
-    boolean contient(Point point){
+    public boolean contient(Point point){
         return point.x >= this.point.x
                 && point.x <= this.point.x+ longueur
                 && point.y >= this.point.y

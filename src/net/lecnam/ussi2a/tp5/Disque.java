@@ -3,11 +3,15 @@ package net.lecnam.ussi2a.tp5;
 public class Disque extends Figure {
 
     Point center;
-    Double rayon;
+    double rayon;
 
-    public Disque(Point center, Double rayon) {
+    public Disque(Point center, double rayon) {
         this.center = center;
         this.rayon = rayon;
+    }
+
+    public  Disque(double x, double y, double rayon) {
+        this(new Point(x, y), rayon);
     }
 
     public void translate(double x, double y) {
