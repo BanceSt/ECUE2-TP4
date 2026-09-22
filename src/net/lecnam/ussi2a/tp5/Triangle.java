@@ -1,10 +1,11 @@
 package net.lecnam.ussi2a.tp5;
 
-public class Triangle extends Figure{
+public class Triangle extends Figure implements Inclinable{
 
     Point ptn1;
     Point ptn2;
     Point ptn3;
+    double angle = 0;
 
     public Triangle(Point ptn1, Point ptn2, Point ptn3) {
         this.ptn1 = ptn1;
@@ -25,14 +26,23 @@ public class Triangle extends Figure{
 
     @Override
     public boolean contient(Point ptn) {
+        double angleRad = angle * Math.PI/180;
+        double xb2 = ptn1.x + (ptn2.x - ptn1.x) * Math.cos(angleRad) - (ptn2.y - ptn1.y) * Math.sin(angleRad);
+        double yb2 = ptn1.y + (ptn2.x - ptn1.x) * Math.sin(angleRad) + (ptn2.y - ptn1.y) * Math.cos(angleRad);
+        double xb3 = ptn1.x + (ptn3.x - ptn1.x) * Math.cos(angleRad) - (ptn3.y - ptn1.y) * Math.sin(angleRad);
+        double yb3 = ptn1.y + (ptn3.x - ptn1.x) * Math.sin(angleRad) + (ptn3.y - ptn1.y) * Math.cos(angleRad);
+
+        Point ptn2bis = new Point(xb2, yb2);
+        Point ptn3bis = new Point(xb3, yb3);
+
         double p = retournePerimetre();
-        double ab = ptn1.retourneDistance(ptn2);
-        double bc = ptn2.retourneDistance(ptn3);
-        double ac = ptn3.retourneDistance(ptn1);
+        double ab = ptn1.retourneDistance(ptn2bis);
+        double bc = ptn2bis.retourneDistance(ptn3bis);
+        double ac = ptn3bis.retourneDistance(ptn1);
 
         double ma = ptn.retourneDistance(ptn1);
-        double mb = ptn.retourneDistance(ptn2);
-        double mc = ptn.retourneDistance(ptn3);
+        double mb = ptn.retourneDistance(ptn2bis);
+        double mc = ptn.retourneDistance(ptn3bis);
 
         return ((p/2 <= ma + mb + mc) && (ma + mb + mc <= (p - Math.min(ab, Math.min(bc, ac)))));
     }
@@ -55,5 +65,15 @@ public class Triangle extends Figure{
     @Override
     public String toString() {
         return String.format("%s - %s - %s", ptn1, ptn2, ptn3);
+    }
+
+    @Override
+    public double getAngle() {
+        return angle;
+    }
+
+    @Override
+    public void pivoter(double degres) {
+        this.angle = angle;
     }
 }

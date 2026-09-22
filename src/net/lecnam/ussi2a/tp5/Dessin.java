@@ -58,6 +58,17 @@ public class Dessin {
 
     }
 
+    void pivoterTout(double degres) {
+        for (Figure fig : figures) {
+            if (fig == null) {
+                break;
+            }
+            if (fig instanceof Inclinable) {
+                ((Inclinable) fig).pivoter(degres);
+            }
+        }
+    }
+
 
     Figure retournePlusGrand(){
         Figure plusGrand = null;
