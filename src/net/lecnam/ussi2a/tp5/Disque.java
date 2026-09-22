@@ -1,6 +1,6 @@
 package net.lecnam.ussi2a.tp5;
 
-public class Disque {
+public class Disque extends Figure {
 
     Point center;
     Double rayon;

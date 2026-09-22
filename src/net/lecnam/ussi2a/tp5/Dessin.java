@@ -2,17 +2,17 @@ package net.lecnam.ussi2a.tp5;
 
 public class Dessin {
 
-    Rectangle[] figures = new Rectangle[100];
+    Figure[] figures = new Figure[100];
     int nbFigures = 0;
 
-    void ajout(Rectangle figure){
+    void ajout(Figure figure){
         figures[nbFigures]=figure;
         nbFigures++;
     }
 
     double retourneSurfaceTotale(){
         double total = 0;
-        for (Rectangle fig: figures) {
+        for (Figure fig: figures) {
             if (fig == null) {
                 break;
             }
@@ -23,7 +23,7 @@ public class Dessin {
 
     double retournePerimetreTotale(){
         double total = 0;
-        for (Rectangle fig: figures) {
+        for (Figure fig: figures) {
             if (fig == null) {
                 break;
             }
@@ -34,7 +34,7 @@ public class Dessin {
 
     void translate(double x, double y){
 
-        for (Rectangle fig : figures) {
+        for (Figure fig : figures) {
             if (fig == null) {
                 break;
             }
@@ -46,7 +46,7 @@ public class Dessin {
 
     boolean contient(Point p){
 
-        for (Rectangle fig : figures) {
+        for (Figure fig : figures) {
             if (fig == null) {
                 break;
             }
@@ -59,13 +59,13 @@ public class Dessin {
     }
 
 
-    Rectangle retournePlusGrand(){
-        Rectangle plusGrand = null;
-        for (Rectangle fig : figures){
+    Figure retournePlusGrand(){
+        Figure plusGrand = null;
+        for (Figure fig : figures){
             if (fig == null) {
                 break;
             }
-            if(plusGrand == null || plusGrand .retourneSurface() < fig.retourneSurface()){
+            if(plusGrand == null || plusGrand.retourneSurface() < fig.retourneSurface()){
                 plusGrand = fig;
             }
         }

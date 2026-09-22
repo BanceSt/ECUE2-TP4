@@ -1,7 +1,7 @@
 package net.lecnam.ussi2a.tp5;
 
 
-public class Rectangle {
+public class Rectangle extends Figure {
 
     double longueur;
     double largeur;
